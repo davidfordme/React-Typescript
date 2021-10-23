@@ -21,14 +21,14 @@
     }
 
     &:after {
-        $loaderSize: 60px;
+        $loaderSize: 100px;
         content: 'Preparing for launch...';
         position: absolute;
         top: 50%;
         left: 50%;
         padding-top: $loaderSize + 20px;
         transform: translate(-50%, -50%);
-        background-image: url('../../images/helmet.svg');
+        background-image: url('../../images/helmet-animated.svg');
         background-size: $loaderSize;
         background-repeat: no-repeat;
         background-position: top center;

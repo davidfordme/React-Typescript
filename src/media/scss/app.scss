@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap');
+
+@import 'colours';
+
 body,
 html {
     margin: 0;
@@ -11,5 +15,7 @@ html {
 }
 
 body {
-    background: #000;
+    background: $primary;
+    font-family: 'Fira Code', monospace;
+    color: #FFF;
 }

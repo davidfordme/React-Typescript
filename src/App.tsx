@@ -1,16 +1,21 @@
 import './media/scss/app.scss';
 
-import React from 'react';
+import React, { useState } from 'react';
 
+import { Context } from './Context';
 import Loader from './componants/elements/Loader';
-import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
+import UpcomingLaunches from './componants/views/UpcomingLaunches';
 
-function App() {
+const App = () => {
+
+  const [isLoading, setLoading] = useState<boolean>(true)
+
   return (
-    <div className="App">
-      <Loader />
-    </div>
-  );
-}
+    <Context.Provider value={{isLoading, setLoading}}>
+      <Loader/>
+      <UpcomingLaunches/>
+    </Context.Provider>
+  )
+};
 
 export default App;

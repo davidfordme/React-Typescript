@@ -11,3 +11,8 @@ So far:
 - ApolloClient
 
 Loading data from SpaceX via their publicly available (GraphQl API)[https://api.spacex.land/graphql/]
+
+Also tinkered with:
+
+- SVG animation
+- ImageMagick (convert logo192.png -thumbnail 64x64 -alpha on -background none -flatten favicon.ico)

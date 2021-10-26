@@ -6,7 +6,7 @@ export type GlobalContent = {
 }
 
 export const Context = createContext<GlobalContent>({
-  isLoading : true,
+  isLoading : false,
   setLoading: () => {}
 })
 

@@ -8,7 +8,7 @@ import UpcomingLaunches from './componants/views/UpcomingLaunches';
 
 const App = () => {
 
-  const [isLoading, setLoading] = useState<boolean>(true)
+  const [isLoading, setLoading] = useState<boolean>(false)
 
   return (
     <Context.Provider value={{isLoading, setLoading}}>

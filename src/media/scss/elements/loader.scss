@@ -7,17 +7,18 @@
     z-index: 999;
 
     &.in {
-        -webkit-animation: fadeIn 0.5s ease-out;
-        -moz-animation: fadeIn 0.5s ease-out;
-        -o-animation: fadeIn 0.5s ease-out;
-        animation: fadeIn 0.5s ease-out;
+        display: block;
+        -webkit-animation: fadeIn 0.5s linear forwards;
+        -moz-animation: fadeIn 0.5s linear forwards;
+        -o-animation: fadeIn 0.5s linear forwards;
+        animation: fadeIn 0.5s linear forwards;
     }
 
     &.out {
-        -webkit-animation: fadeOut 0.5s ease-out;
-        -moz-animation: fadeOut 0.5s ease-out;
-        -o-animation: fadeOut 0.5s ease-out;
-        animation: fadeOut 0.5s ease-out;
+        -webkit-animation: fadeOut 0.5s linear forwards;
+        -moz-animation: fadeOut 0.5s linear forwards;
+        -o-animation: fadeOut 0.5s linear forwards;
+        animation: fadeOut 0.5s linear forwards;
     }
 
     &:after {
@@ -37,40 +38,6 @@
     }
 }
 
-@-webkit-keyframes fadeIn {
-    0% {
-        display: none;
-        opacity: 0;
-    }
-
-    1% {
-        display: block;
-        opacity: 0;
-    }
-
-    100% {
-        display: block;
-        opacity: 1;
-    }
-}
-
-@-moz-keyframes fadeIn {
-    0% {
-        display: none;
-        opacity: 0;
-    }
-
-    1% {
-        display: block;
-        opacity: 0;
-    }
-
-    100% {
-        display: block;
-        opacity: 1;
-    }
-}
-
 @keyframes fadeIn {
     0% {
         display: none;
@@ -85,40 +52,6 @@
     100% {
         display: block;
         opacity: 1;
-    }
-}
-
-@-webkit-keyframes fadeOut {
-    0% {
-        display: block;
-        opacity: 1;
-    }
-
-    99% {
-        display: block;
-        opacity: 0;
-    }
-
-    100% {
-        display: none;
-        opacity: 0;
-    }
-}
-
-@-moz-keyframes fadeOut {
-    0% {
-        display: block;
-        opacity: 1;
-    }
-
-    99% {
-        display: block;
-        opacity: 0;
-    }
-
-    100% {
-        display: none;
-        opacity: 0;
     }
 }
 

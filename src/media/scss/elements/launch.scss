@@ -1,0 +1,17 @@
+.launch {
+    display: inline-block;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 2px solid #FFF;
+    margin-bottom: 2rem;
+    min-width: 600px;
+    -webkit-transition: transform 0.2s ease-in-out;
+    -moz-transition: transform 0.2s ease-in-out;
+    -o-transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+    }
+}

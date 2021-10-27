@@ -15,7 +15,7 @@ html {
 }
 
 body {
-    background: $primary;
+    background: var(--main-colour);
     font-family: 'Fira Code', monospace;
     color: #FFF;
 }

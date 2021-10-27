@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 
 import { useGlobalContext } from '../../Context';
+import Launch from "../elements/Launch";
 
 const UpcomingLaunches = () => {
 
@@ -23,7 +24,8 @@ const UpcomingLaunches = () => {
         .query({
           query: gql`
             query {
-              launchesUpcoming(limit: 10) {
+              launchesUpcoming(limit: 30) {
+                id
                 mission_name
                 rocket {
                   rocket {
@@ -36,13 +38,13 @@ const UpcomingLaunches = () => {
                 mission_id
               }
             }
-          
           `
         })
         .then(result => {
+          
           const { data } = result;
           const { launchesUpcoming } = data;
-          setLaunches(launchesUpcoming);  
+          setLaunches(launchesUpcoming);
 
           setTimeout(() => {
             setLoading(false);
@@ -55,9 +57,10 @@ const UpcomingLaunches = () => {
     });
 
     return(
-        <div className="upcomingLaunches">
-          <nav></nav>
-        </div>
+        <section className="upcomingLaunches">
+          <h2>Upcoming Launches</h2>
+          { launches.length > 0 ? launches.map((object, i) => <Launch key={ i } data={ object } /> ) : '' }
+        </section>
     )
 }
 

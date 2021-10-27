@@ -3,15 +3,97 @@
     padding: 2rem;
     border-radius: 1rem;
     border: 2px solid #FFF;
-    margin-bottom: 2rem;
-    min-width: 600px;
+    margin: 1rem 2rem;
+    width: 600px;
+    max-width: 600px;
     -webkit-transition: transform 0.2s ease-in-out;
     -moz-transition: transform 0.2s ease-in-out;
     -o-transition: transform 0.2s ease-in-out;
     transition: transform 0.2s ease-in-out;
+    transform: scale(0.95);
+
+    h2 {
+        display: block;
+        font-size: 1.2rem;
+        margin: 0;
+        padding: 0;
+        position: relative;
+
+        .rocket {
+            display: inline-block;
+            margin: -1.5rem 1rem -1.5rem -1.5rem;
+            width: 4rem;
+            height: 4rem;
+            background-image: url('../../images/rockets/falcon-9-heavy.svg');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            transform: rotate(45deg);
+        }
+
+        &:after,
+        &:before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            border-radius: 2px;
+            background-color: #FFF;
+            position: absolute;
+            right: 10px;
+
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+        }
+
+        &:after {
+            transform: rotate(-45deg);
+            margin-left: -12px;
+        }
+
+        &:before {
+            margin-right: -12px;
+            transform: rotate(45deg);
+        }
+    }
+
+    .content {
+        p:first-child {
+            margin-top: 2rem;
+        }
+    }
 
     &:hover {
         cursor: pointer;
-        transform: scale(1.05);
+        transform: scale(1);
+    }
+
+    &.slideup, 
+    &.slidedown {
+        .content {
+            max-height: 0;            
+            overflow-y: hidden;
+            -webkit-transition: all 0.5s ease-in-out;
+            -moz-transition: all 0.5s ease-in-out;
+            -o-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+
+    &.slidedown {     
+        transform: scale(1);
+
+        .content {     
+            max-height: 600px;
+        }
+
+        h2 {
+            &:after,
+            &:before {
+                right: 5px;
+                margin: 0;
+            }
+        }
     }
 }

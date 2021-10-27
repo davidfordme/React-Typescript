@@ -27,6 +27,8 @@ const UpcomingLaunches = () => {
               launchesUpcoming(limit: 30) {
                 id
                 mission_name
+                mission_id
+                details
                 rocket {
                   rocket {
                     id
@@ -35,7 +37,6 @@ const UpcomingLaunches = () => {
                     type
                   }
                 }
-                mission_id
               }
             }
           `
@@ -45,6 +46,8 @@ const UpcomingLaunches = () => {
           const { data } = result;
           const { launchesUpcoming } = data;
           setLaunches(launchesUpcoming);
+
+          console.log(launchesUpcoming);
 
           setTimeout(() => {
             setLoading(false);
@@ -59,7 +62,7 @@ const UpcomingLaunches = () => {
     return(
         <section className="upcomingLaunches">
           <h2>Upcoming Launches</h2>
-          { launches.length > 0 ? launches.map((object, i) => <Launch key={ i } data={ object } /> ) : '' }
+          { launches.length > 0 ? launches.map((object, i) => <Launch key={ i } data={ object } content_visible={ false } /> ) : '' }
         </section>
     )
 }
